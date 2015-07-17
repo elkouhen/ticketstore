@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">ticketstore</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_usagers">Liste des Usagers</string>
+    <string name="title_activity_usager">Edition Usager</string>
+    <string name="lastname">nom de famille</string>
+    <string name="firstname">prénom</string>
+    <string name="submit">enregistrer</string>
+    <string name="dropTable">DROP TABLE IF EXISTS </string>
+    <string name="createTable">CREATE TABLE </string>
+    <string name="dateNaissance">date de naissance</string>
+    <string name="adresse">adresse</string>
+    <string name="email">email</string>
+    <string name="telephone">téléphone</string>
+
+</resources>

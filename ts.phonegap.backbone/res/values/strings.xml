@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">ts.phonegap.backbone</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">TicketStore Backbone</string>
+
+</resources>

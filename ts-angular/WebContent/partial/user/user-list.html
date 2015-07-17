@@ -1,0 +1,13 @@
+<div>
+	Recherche : <input ng-model="searchText"><br /> <br /> Liste
+	des Usagers
+	<table class="table-striped" w_idth="100%">
+		<tbody>
+			<tr ng-repeat="user in users | filter:searchText">
+				<td><a href="#/users/{{user._id}}">{{user.lastname}}
+						{{user.firstname}}</a></td>
+				<td><a href="#/commandeTrajet/{{user._id}}">>></a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html ng-app="ticketstore">
+<head>
+<title>TicketStore Angular</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<style>
+body {
+	padding-top: 60px;
+	/* 60px to make the container go all the way to the bottom of the topbar */
+}
+</style>
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script src="js/bootstrap.js"></script>
+
+<script src="js/angular-1.0.1.js">
+	
+</script>
+
+<script type="text/javascript" src="js/object.js">
+	
+</script>
+
+<script type="text/javascript" src="js/business/user/userdto.js">
+	
+</script>
+<script type="text/javascript" src="js/business/user/userdao.js">
+	
+</script>
+<script type="text/javascript" src="js/business/trajet/trajetdto.js">
+	
+</script>
+<script type="text/javascript" src="js/business/trajet/trajetdao.js">
+	
+</script>
+<script type="text/javascript" src="js/business/billet/billetdto.js">
+	
+</script>
+<script type="text/javascript" src="js/business/billet/billetdao.js">
+	
+</script>
+<script type="text/javascript" src="js/gui/controllers.js">
+	
+</script>
+<script type="text/javascript" src="js/business/init.js">
+	
+</script>
+
+<script type="text/javascript">
+	angular.module('ticketstore', []).config(
+			[ '$routeProvider', function($routeProvider) {
+				$routeProvider.when('/users', {
+					templateUrl : 'partial/user/user-list.html',
+					controller : userListController
+				}).when('/users/:userId', {
+					templateUrl : 'partial/user/user-detail.html',
+					controller : userDetailController
+				}).when('/trajets', {
+					templateUrl : 'partial/trajet/trajet-list.html',
+					controller : trajetListController
+				}).when('/commandeTrajet/:userId', {
+					templateUrl : 'partial/trajet/trajet-commande.html',
+					controller : trajetListController
+				}).when('/billets', {
+					templateUrl : 'partial/billet/billet-list.html',
+					controller : billetListController
+				}).when('/billets/:userId', {
+					templateUrl : 'partial/billet/billet-list-for-user.html',
+					controller : billetListForUserController
+				}).otherwise({
+					redirectTo : '/users'
+				});
+			} ]);
+</script>
+
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse"
+					data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
+				</a> <a class="brand" href="#">TicketStore Angular</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li><a href="#">Usagers</a></li>
+						<li><a href="#trajets">Trajets</a></li>
+						<li><a href="#billets">Billets</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="span4">
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

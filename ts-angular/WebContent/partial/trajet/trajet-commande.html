@@ -1,0 +1,16 @@
+<div>
+	Utilisateur : <a href="#/users/{{user._id}}">{{user.firstname}}
+		{{user.lastname}}</a> <br /> Recherche : <input ng-model="searchText"><br />
+	<br /> Liste des Trajets
+	<table class="table-striped" w_idth="100%">
+		<tbody>
+			<tr ng-repeat="trajet in trajets| filter:searchText">
+
+				<td>{{trajet.depart}}</td>
+				<td>{{trajet.arrivee}}</td>
+				<td><a href="#/billets/{{user._id}}"
+					onclick="">>></a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

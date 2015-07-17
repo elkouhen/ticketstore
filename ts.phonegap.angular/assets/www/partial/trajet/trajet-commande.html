@@ -1,0 +1,20 @@
+<script type="text/javascript">
+
+</script>
+
+<div>
+	Utilisateur : <a href="#/users/{{user.id}}">{{user.firstname}}
+		{{user.lastname}}</a> <br /> Recherche : <input ng-model="searchText"><br />
+	<br /> Liste des Trajets
+	<table class="table-striped" width="100%">
+		<tbody>
+			<tr ng-repeat="trajet in trajets| filter:searchText">
+
+				<td>{{trajet.depart}}</td>
+				<td>{{trajet.arrivee}}</td>
+				<td><a href="#/billets/{{user.id}}"
+					onclick="billetDaoModule.makeFromIds({{user.id}}, {{trajet.id}})">>></a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

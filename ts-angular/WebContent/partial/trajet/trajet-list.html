@@ -1,0 +1,13 @@
+<div>
+	Recherche : <input ng-model="searchText"><br />
+	<br /> Liste des Trajets
+	<table class="table-striped" w_idth="100%">
+		<tbody>
+			<tr ng-repeat="trajet in trajets| filter:searchText">
+
+				<td>{{trajet.depart}}</td>
+				<td>{{trajet.arrivee}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
